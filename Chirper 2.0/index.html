@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Chirpster</title>
+    <link href="StyleSheet1.css" rel="stylesheet" />
+    <link href="Content/font-awesome.min.css" rel="stylesheet" />
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+</head>
+<body id="body">
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <a class="navbar-brand" href="#">CHIRPSTER <img src="http://www.flhome.org/images/twitter%20logo%20small.gif" height="42" width="42"></a>
+            <form class="navbar-form navbar-left" role="search">
+                <div class="form-group">
+                    <input id="FriendUrl" type="text" class="form-control" placeholder="Friend's Name">
+                </div>
+                <a href="#" class="btn btn-lg btn-warning" onclick="ChApp.followFriend()">Add New Friend <span class="glyphicon glyphicon-plus-sign"></span></a><!--   Here the person will be able to add friend urls and follow them-->
+                <a href="#" class="btn btn-lg btn-warning">My Profile <span class="glyphicon glyphicon-user"></span></a>
+            </form>
+        </div>
+    </nav>
+    <section class="container">
+        <section class="col-md-3">
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="thumbnail">
+                        <img id="picture" src="http://www.clker.com/cliparts/F/S/w/Q/k/K/head-profile-silhouette-male-hi.png" />
+                        <div class="caption">
+                            <h3 id="userName">Profile Name</h3>
+                            <p id="bio"></p>
+                            <p><button id="updateProfile" class="btn btn-default" onclick="ChApp.EditProfile()">Update Profile</button></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <textarea class="form-control" rows="3" id="message"></textarea>
+                <a href="#" class="btn btn-sm btn-info" onclick="ChApp.createChirp()">Send Chrip! <span class="glyphicon glyphicon-arrow-right"></span></a>
+                <a href="#" class="btn btn-sm btn-info">Submit Changes <span class="glyphicon glyphicon-cog"></span></a>
+            </div>
+            <div class="col-md-12">
+                <h3>Friends</h3>
+                <ul id="friendslist"></ul>
+            </div>
+        </section>
+        <section class="col-md-9">
+            <table class="table" id="chirps">
+                <thead>
+                    <tr>
+                        <th>
+                            Chirp
+                        </th>
+                        <th>
+                            User
+                        </th>
+                        <th>
+                            Time
+                        </th>
+                        <th>
+                            Edit
+                        </th>
+                        <th>
+                            Delete
+                        </th>
+                    </tr>
+                </thead>
+                <tbody id="tbody"></tbody>
+            </table>
+        </section>
+
+    </section>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                </div>
+                <div class="modal-body">
+                    <img id="profilePic" />
+                    <p id="biography2">
+                    </p>
+                    <h3>Friends</h3>
+                    <ul id="friendsList"></ul>
+                    <h3 id="fchirps">Friends Chirps</h3>
+                    <ul id="friendChirps"></ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" onclick="ChApp.ClearModal()" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+            <script src="Scripts/jquery-1.9.0.js"></script>
+            <script src="Scripts/bootstrap.js"></script>
+            <script src="JavaScript1.js"></script>
+</body>
+</html>
